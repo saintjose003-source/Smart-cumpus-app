@@ -1,0 +1,19 @@
+import streamlit as st
+
+st.set_page_config(page_title="Smart Campus Assistant", page_icon="🎓")
+st.title("Smart Campus Assistant - Ahmed Shahame Mwidani TTI")
+
+faq = {
+    "timetable": "Classes start at 8:00 AM, Monday to Friday. Each lesson lasts 2 hours.",
+    "events": "Career Fair on 10 Oct. Sports Day on 22 Oct.",
+    "library": "Library open 8am - 8pm Mon-Sat.",
+    "location": "Ahmed Shahame Mwidani TTI, Mombasa County, Kenya."
+}
+
+q = st.text_input("Ask me anything about the campus:")
+
+if st.button("Ask"):
+    ans = faq.get(q.lower(), "Sorry, I don't have that info yet. Check with admin.")
+    st.success(ans)
+
+st.write("Tip: Try: 'timetable', 'events', 'library', or 'location'.")
